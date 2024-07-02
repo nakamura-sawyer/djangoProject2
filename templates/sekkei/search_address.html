@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>検索結果</title>
+</head>
+<body>
+{% if results %}
+<h2>検索結果</h2>
+
+        <tbody>
+        {% for result in results %}
+            <tr>
+                <td>{{ result.shiireid }}</td>
+                <td>{{ result.shiiremei }}</td>
+                <td>{{ result.shiireaddress }}</td>
+                <td>{{ result.shiiretel }}</td>
+                <td>{{ result.shihonkin }}</td>
+                <td>{{ result.nouki }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+{% else %}
+    <p>検索結果がありません。</p>
+{% endif %}
+
+<a href="{% url 'home_kanrisya' %}">
+    <p>戻る</p></a>
+</body>
+</html>

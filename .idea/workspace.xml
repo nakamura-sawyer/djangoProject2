@@ -1,32 +1,115 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="647469f6-79cb-4036-8c21-9e6c7cbfed0b" name="変更" comment="" />
+    <list default="true" id="647469f6-79cb-4036-8c21-9e6c7cbfed0b" name="変更" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/djangoProject2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/djangoProject2.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/djangoProject2/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/djangoProject2/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/djangoProject2/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/djangoProject2/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/systemsekkei/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/systemsekkei/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/systemsekkei/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/systemsekkei/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/systemsekkei/views.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 0
-}]]></component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;nakamura-sawyer&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/nakamura-sawyer/djangoProject2.git&quot;,
+    &quot;accountId&quot;: &quot;1956cae0-a7e2-4f8c-8ee1-41d2414709c1&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="2hAljkDEEq5760UeERG5rXSRUU3" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Django サーバー.djangoProject2.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.pycharm.django.structure.promotion.once.per.project&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;django.template.preview.state&quot;: &quot;SHOW_EDITOR&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/211018/PycharmProjects/djangoProject2/systemsekkei/models.py&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
+    ]
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\211018\PycharmProjects\djangoProject2\templates" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="djangoProject2" type="Python.DjangoServer" factoryName="Django server">
+      <module name="djangoProject2" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="djangoProject2.settings" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="localhost" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -43,8 +126,44 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1717044900034</updated>
-      <workItem from="1717044901713" duration="32000" />
+      <workItem from="1717044901713" duration="3877000" />
+      <workItem from="1717112179088" duration="6446000" />
+      <workItem from="1717372879935" duration="10016000" />
+      <workItem from="1717466484445" duration="4259000" />
+      <workItem from="1717561291792" duration="16000" />
+      <workItem from="1717561517332" duration="5348000" />
+      <workItem from="1717631890582" duration="11849000" />
+      <workItem from="1717718398471" duration="6353000" />
+      <workItem from="1717725624255" duration="2156000" />
+      <workItem from="1717977198728" duration="12138000" />
+      <workItem from="1718070865675" duration="5724000" />
+      <workItem from="1718166634709" duration="4677000" />
+      <workItem from="1718237102155" duration="11435000" />
+      <workItem from="1718322752311" duration="10070000" />
+      <workItem from="1718582249815" duration="10158000" />
+      <workItem from="1718675343934" duration="5367000" />
+      <workItem from="1718770029845" duration="6358000" />
+      <workItem from="1718841239112" duration="6576000" />
+      <workItem from="1718847861217" duration="6032000" />
+      <workItem from="1718855839495" duration="599000" />
+      <workItem from="1718927792685" duration="12194000" />
+      <workItem from="1718946066360" duration="10000" />
+      <workItem from="1718946154753" duration="7000" />
+      <workItem from="1718946188639" duration="16000" />
+      <workItem from="1719186190566" duration="17768000" />
+      <workItem from="1719208883564" duration="51000" />
+      <workItem from="1719280086977" duration="13199000" />
+      <workItem from="1719374183927" duration="5323000" />
+      <workItem from="1719446387090" duration="11960000" />
+      <workItem from="1719463961120" duration="929000" />
+      <workItem from="1719531664693" duration="14274000" />
+      <workItem from="1719548071270" duration="62000" />
+      <workItem from="1719548179509" duration="11000" />
+      <workItem from="1719884890558" duration="628000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
 </project>

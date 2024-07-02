@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>従業員氏名変更確認</title>
+</head>
+<body>
+<h1>従業員氏名変更確認</h1>
+<p>以下の情報で氏名が変更されました:</p>
+<table>
+    <tr>
+        <th>ユーザーID:</th>
+        <td>{{ userId }}</td>
+    </tr>
+    <tr>
+        <th>新しい姓:</th>
+        <td>{{ newLastName }}</td>
+    </tr>
+    <tr>
+        <th>新しい名:</th>
+        <td>{{ newFirstName }}</td>
+    </tr>
+</table>
+<a href="{% url 'home_kanrisya' %}">
+    <p>戻る</p>
+</a>
+</body>
+</html>

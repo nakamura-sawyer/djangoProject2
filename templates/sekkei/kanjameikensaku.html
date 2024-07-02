@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>患者名検索</title>
+</head>
+<body>
+<h1>患者名検索</h1>
+<form action="{% url 'search_name' %}" method="get">
+        <label for="patient-name">患者名（部分一致）:</label>
+        <input type="text" id="patient-name" name="patient-name">
+        <br>
+<button type="submit">検索</button>
+   </form> 
+<a href="{% url 'home_uketuke' %}">
+<p>戻る</p></a>
+</body>
+</html>

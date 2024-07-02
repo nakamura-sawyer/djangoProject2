@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>住所検索</title>
+</head>
+<body>
+<h1>住所検索</h1>
+<form action="{% url 'search_address' %}" method="get">
+        <label for="address">住所:</label>
+        <input type="text" id="address" name="address" required><br>
+        <button type="submit">検索</button>
+    </form>
+
+<a href="{% url 'home_kanrisya' %}">
+<p>戻る</p></a>
+</body>
+</html>

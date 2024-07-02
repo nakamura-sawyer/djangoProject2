@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>患者登録</title>
+    <script>
+        function validateRegisterForm() {
+            var patid = document.getElementById('patid').value;
+            var patfname = document.getElementById('patfname').value;
+            var patlname = document.getElementById('patlname').value;
+            var hokenmei = document.getElementById('hokenmei').value;
+            var hokenexp = document.getElementById('hokenexp').value;
+            var errorMessage = "";
+
+            if (patid === "") {
+                errorMessage += "患者IDを入力してください。\n";
+            }
+
+            if (patfname === "") {
+                errorMessage += "名を入力してください。\n";
+            }
+
+            if (patlname === "") {
+                errorMessage += "姓を入力してください。\n";
+            }
+
+            if (hokenmei === "") {
+                errorMessage += "保険名を入力してください。\n";
+            }
+
+            if (hokenexp === "") {
+                errorMessage += "有効期限を入力してください。\n";
+            }
+            
+            if (errorMessage !== "") {
+                alert(errorMessage);
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</head>
+<body>
+<h1>患者登録</h1>
+<form action="{% url 'register_patient' %}" method="POST">
+    {% csrf_token %}
+        <label for="patid">患者ID:</label>
+        <input type="text" id="patid" name="patid"><br><br>
+
+        <label for="patfname">患者名:</label>
+        <input type="text" id="patfname" name="patfname"><br><br>
+
+        <label for="patlname">患者姓:</label>
+        <input type="text" id="patlname" name="patlname"><br><br>
+
+        <label for="hokenmei">保険証明名記号番号:</label>
+        <input type="text" id="hokenmei" name="hokenmei"><br><br>
+
+        <label for="hokenexp">保険の有効期限:</label>
+        <input type="date" id="hokenexp" name="hokenexp"><br><br>
+
+        <input type="submit" value="登録">
+    </form>
+<a href="{% url 'home_uketuke' %}">
+<p>戻る</p></a>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>従業員氏名変更</title>
+</head>
+<body>
+<h1>従業員氏名変更</h1>
+<form action="update_name" method="post">
+    {% csrf_token %}
+        <label for="userId">ユーザーID:</label>
+        <input type="text" id="userId" name="userId" required><br><br>
+        <label for="newLastName">新しい姓:</label>
+        <input type="text" id="newLastName" name="newLastName" required><br><br>
+        <label for="newFirstName">新しい名:</label>
+        <input type="text" id="newFirstName" name="newFirstName" required><br><br>
+        <input type="submit" value="変更確認">
+    </form>
+<a href="{% url 'home_kanrisya' %}">
+<p>戻る</p></a>
+</body>
+</html>

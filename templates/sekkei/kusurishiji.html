@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>薬投与指示</title>
+</head>
+<body>
+<h1>薬投与指示</h1>
+    <form action="/add-medication" method="post">
+        <label for="medicineid">薬剤ID:</label>
+        <input type="text" id="medicineid" name="medicineid" required><br>
+        <label for="medicinename">薬剤名:</label>
+        <input type="text" id="medicinename" name="medicinename" required><br>
+        <label for="unit">単位:</label>
+        <input type="text" id="unit" name="unit" required><br>
+        <button type="submit">追加</button>
+    </form>
+<a href="{% url 'home_doctor' %}">
+<p>戻る</p></a>
+</body>
+</html>

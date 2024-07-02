@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>薬投与削除</title>
+</head>
+<body>
+<h1>薬投与削除</h1>
+<form action="/remove-medication" method="post">
+        <label for="patient-id">患者ID:</label>
+        <input type="text" id="patid" name="patient-id" required>
+        <br>
+        <label for="medication">薬の名前:</label>
+        <input type="text" id="medicineid" name="medicinename" required>
+        <br>
+        <button type="submit">削除</button>
+    </form>
+<a href="{% url 'home_doctor' %}">
+    <p>戻る</p></a>
+</body>
+</html>

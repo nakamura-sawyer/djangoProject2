@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>処置履歴確認</title>
+    
+</head>
+<body>
+<h1>処置履歴確認</h1>
+<form action="/search_patient" method="post">
+        <label for="patid">患者ID:</label>
+        <input type="text" id="patid" name="patid"><br>
+    <input type="submit" value="表示">
+</form>
+<a href="{% url 'home_doctor' %}">
+ <p>戻る</p>
+</a>
+</body>
+</html>

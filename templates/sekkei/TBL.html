@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>仕入先TBL</title>
+     <script>
+        function validateShiireForm() {
+            var shiireid = document.getElementById('shiireid').value;
+            var shiirename = document.getElementById('shiirename').value;
+            var shiireaddress = document.getElementById('shiireaddress').value;
+            var shiiretel = document.getElementById('shiiretel').value;
+            var shihonkin = document.getElementById('shihonkin').value;
+            var nouki = document.getElementById('nouki').value;
+            var errorMessage = "";
+
+            if (shiireid === "") {
+                errorMessage += "仕入先IDを入力してください。\n";
+            }
+
+            if (shiirename === "") {
+                errorMessage += "仕入先名を入力してください。\n";
+            }
+
+            if (shiireaddress === "") {
+                errorMessage += "住所を入力してください。\n";
+            }
+
+            if (shiiretel === "") {
+                errorMessage += "電話番号を入力してください。\n";
+            }
+
+            if (shihonkin === "" || isNaN(shihonkin)) {
+                errorMessage += "資本金を正しく入力してください。\n";
+            }
+
+            if (nouki === "" || isNaN(nouki)) {
+                errorMessage += "納期を正しく入力してください。\n";
+            }
+
+            if (errorMessage !== "") {
+                alert(errorMessage);
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</head>
+<body>
+<h1>仕入先TBL</h1>
+<form action="/register_supplier" method="post">
+        <label for="shiireid">仕入先ID:</label>
+        <input type="text" id="shiireid" name="shiireid"><br><br>
+
+        <label for="shiiremei">仕入先名:</label>
+        <input type="text" id="shiiremei" name="shiiremei"><br><br>
+
+        <label for="shiireaddress">仕入先住所:</label>
+        <input type="text" id="shiireaddress" name="shiireaddress"><br><br>
+
+        <label for="shiiretel">仕入先電話番号:</label>
+        <input type="text" id="shiiretel" name="shiiretel"><br><br>
+
+        <label for="shihonkin">資本金:</label>
+        <input type="number" id="shihonkin" name="shihonkin"><br><br>
+
+        <label for="nouki">納期:</label>
+        <input type="number" id="nouki" name="nouki"><br><br>
+
+        <input type="submit" value="検索">
+    </form>
+<a href="{% url 'home_kanrisya' %}">
+<p>戻る</p></a>
+</body>
+</html>

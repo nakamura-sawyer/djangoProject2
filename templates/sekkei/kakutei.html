@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>処置確定</title>
+</head>
+<body>
+<h1>処置確定</h1>
+<form action="/confirm-procedure" method="post">
+        <label for="patient__id">患者ID:</label>
+        <input type="text" id="patient_id" name="patient-id" required>
+        <br>
+        <label for="procedure">処置内容:</label>
+        <textarea id="procedure" name="procedure" required></textarea>
+        <br>
+        <button type="submit">確定</button>
+    </form>
+<a href="{% url 'home_doctor' %}">
+    <p>戻る</p></a>
+</body>
+</html>
