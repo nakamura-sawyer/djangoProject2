@@ -1,7 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, request
-from django.db.models import Q
-import datetime
+from datetime import datetime
 
 from systemsekkei.models import Employee
 from systemsekkei.models import Shiiregyosha
@@ -150,7 +149,7 @@ def update_hoken(request):
 
         try:
             # 文字列をdatetime.dateオブジェクトに変換
-            hokenexp = datetime.strptime(hokenexp_str, '%Y-%m-%d')
+            hokenexp = datetime.strptime(hokenexp_str, '%Y-%m-%d').date()
 
             patient = Patient.objects.get(patid=patid)
             patient.hokenmei = hokenmei
@@ -171,25 +170,20 @@ def kanri(request):
 def search_name(request):
     query = request.GET.get('patient-name', '')
     if query:
-        results = Patient.objects.filter(patfname__icontains=query, patlname__icontains=query)
+        results = Patient.objects.filter(patfname__icontains=query) | Patient.objects.filter(patlname__icontains=query)
         result_list = []
-        print(results)
         for result in results:
-            print(f'aaa={result.patid}')
             result_dict = {
                 'patid': result.patid,
                 'patfname': result.patfname,
                 'patlname': result.patlname,
                 'hokenmei': result.hokenmei,
-                'hokenexp': result.hokenexp.strftime('%Y-%m-%d') if isinstance(result.hokenexp,
-                                                                               datetime.date) else result.hokenexp
+                'hokenexp': result.hokenexp.strftime('%Y-%m-%d') if isinstance(result.hokenexp, datetime.date) else result.hokenexp
             }
             result_list.append(result_dict)
     else:
-        results = Patient.objects.all()
         result_list = []
-    print(result_list)
-    return render(request, 'sekkei/search_name.html', {'results': results})
+    return render(request, 'sekkei/search_name.html', {'results': result_list})
 def kensaku(request):
     return render(request, 'sekkei/kanjameikensaku.html')
 

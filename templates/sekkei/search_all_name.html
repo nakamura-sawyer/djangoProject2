@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>検索結果</title>
+</head>
+<body>
+{% if results %}
+<h1>検索結果</h1>
+    <table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>姓</th>
+            <th>名</th>
+            <th>保険名</th>
+            <th>有効期限</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for patient in results %}
+            <tr>
+                <td>{{ patient.patid }}</td>
+                <td>{{ patient.patfname }}</td>
+                <td>{{ patient.patlname }}</td>
+                <td>{{ patient.hokenmei }}</td>
+                <td>{{ patient.hokenexp }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% else %}
+    <p>検索結果がありません。</p>
+{% endif %}
+<a href="{% url 'home_doctor' %}">
+    <p>戻る</p></a>
+</body>
+</html>
