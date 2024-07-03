@@ -28,8 +28,12 @@ urlpatterns = [
     path('kensaku', views.kensaku, name='kensaku'),
     path('home/doctor/', views.home_doctor, name='home_doctor'),
     path('kensaku2', views.kensaku2, name='kensaku2'),
+
     path('shiji', views.shiji, name='shiji'),
+
     path('sakujo', views.sakujo, name='sakujo'),
+
     path('kakutei', views.kakutei, name='kakutei'),
+
     path('rireki', views.rireki, name='rireki')
 ]

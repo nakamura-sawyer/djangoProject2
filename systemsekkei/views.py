@@ -8,12 +8,13 @@ from systemsekkei.models import Patient
 from systemsekkei.models import Medicine
 
 
-
 def index(request):
     return HttpResponse("ようこそ")
 
+
 def login(request):
     return render(request, 'sekkei/login.html')
+
 
 def homes(request):
     role = request.POST['role']
@@ -23,8 +24,11 @@ def homes(request):
         return render(request, 'sekkei/home_uketuke.html')
     else:
         return render(request, 'sekkei/home_doctor.html')
+
+
 def home_kanrisya(request):
     return render(request, 'sekkei/home_kanrisya.html')
+
 
 def register_employee(request):
     if request.method == 'POST':
@@ -47,14 +51,18 @@ def register_employee(request):
     else:
         return render(request, 'sekkei/jugyointouroku.html')
 
+
 def register_success(request):
     return render(request, 'sekkei/jugyointouroku_success.html')
+
 
 def juugyouin(request):
     return render(request, 'sekkei/jugyointouroku.html')
 
+
 def TBL(request):
     return render(request, 'sekkei/TBL.html')
+
 
 def recode(request):
     return render(request, 'sekkei/recodetsuika.html')
@@ -68,8 +76,12 @@ def search_address(request):
         results = []
 
     return render(request, 'sekkei/search_address.html', {'results': results})
+
+
 def jusyo(request):
     return render(request, 'sekkei/jusyokensaku.html')
+
+
 def update_name(request):
     if request.method == 'POST':
         user_id = request.POST['userId']
@@ -91,11 +103,16 @@ def update_name(request):
         })
     else:
         return redirect('home_kanrisya')
+
+
 def name(request):
     return render(request, 'sekkei/jugyoinnamehenkou.html')
 
+
 def home_uketuke(request):
     return render(request, 'sekkei/home_uketuke.html')
+
+
 def update_password(request):
     if request.method == 'POST':
         user_id = request.POST.get('userId')
@@ -113,8 +130,11 @@ def update_password(request):
             return render(request, 'sekkei/error2.html', {'message': 'ユーザーIDと新しいパスワードを入力してください'})
 
     return redirect('home_uketuke')
+
+
 def joho(request):
     return render(request, 'sekkei/jugyoinjohohenkou.html')
+
 
 def register_patient(request):
     if request.method == 'POST':
@@ -137,10 +157,15 @@ def register_patient(request):
     else:
         return render(request, 'sekkei/kanjatouroku.html')
 
+
 def register_success2(request):
     return render(request, 'sekkei/kanjatouroku_success.html')
+
+
 def touroku(request):
     return render(request, 'sekkei/kanjatouroku.html')
+
+
 def update_hoken(request):
     if request.method == 'POST':
         patid = request.POST.get('patid')
@@ -148,7 +173,6 @@ def update_hoken(request):
         hokenexp_str = request.POST.get('hokenexp')
 
         try:
-            # 文字列をdatetime.dateオブジェクトに変換
             hokenexp = datetime.strptime(hokenexp_str, '%Y-%m-%d').date()
 
             patient = Patient.objects.get(patid=patid)
@@ -162,10 +186,15 @@ def update_hoken(request):
             return render(request, 'sekkei/error2.html', {'message': '有効な日付を入力してください'})
 
     return render(request, 'sekkei/update_hoken.html')
+
+
 def update_success(request):
     return render(request, 'sekkei/update_hoken.html')
+
+
 def kanri(request):
     return render(request, 'sekkei/kanjakanri.html')
+
 
 def search_name(request):
     query = request.GET.get('patient-name', '')
@@ -178,28 +207,30 @@ def search_name(request):
                 'patfname': result.patfname,
                 'patlname': result.patlname,
                 'hokenmei': result.hokenmei,
-                'hokenexp': result.hokenexp.strftime('%Y-%m-%d') if isinstance(result.hokenexp, datetime.date) else result.hokenexp
+                'hokenexp': result.hokenexp.strftime('%Y-%m-%d') if isinstance(result.hokenexp,
+                                                                               datetime.date) else result.hokenexp
             }
             result_list.append(result_dict)
     else:
         result_list = []
     return render(request, 'sekkei/search_name.html', {'results': result_list})
+
+
 def kensaku(request):
     return render(request, 'sekkei/kanjameikensaku.html')
 
+
 def home_doctor(request):
     return render(request, 'sekkei/home_doctor.html')
-def kensaku2(request):
-    return render(request, 'sekkei/kanjakensaku.html')
 
+def kensaku2(request):
+    patients = Patient.objects.all()
+    return render(request, 'sekkei/kanjakensaku.html', {'patients': patients})
 def shiji(request):
     return render(request, 'sekkei/kusurishiji.html')
-
 def sakujo(request):
     return render(request, 'sekkei/kusurisakujo.html')
-
 def kakutei(request):
     return render(request, 'sekkei/kakutei.html')
-
 def rireki(request):
     return render(request, 'sekkei/rirekikakunin.html')

@@ -3,48 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>仕入先TBL</title>
-     <script>
-        function validateShiireForm() {
-            var shiireid = document.getElementById('shiireid').value;
-            var shiirename = document.getElementById('shiirename').value;
-            var shiireaddress = document.getElementById('shiireaddress').value;
-            var shiiretel = document.getElementById('shiiretel').value;
-            var shihonkin = document.getElementById('shihonkin').value;
-            var nouki = document.getElementById('nouki').value;
-            var errorMessage = "";
-
-            if (shiireid === "") {
-                errorMessage += "仕入先IDを入力してください。\n";
-            }
-
-            if (shiirename === "") {
-                errorMessage += "仕入先名を入力してください。\n";
-            }
-
-            if (shiireaddress === "") {
-                errorMessage += "住所を入力してください。\n";
-            }
-
-            if (shiiretel === "") {
-                errorMessage += "電話番号を入力してください。\n";
-            }
-
-            if (shihonkin === "" || isNaN(shihonkin)) {
-                errorMessage += "資本金を正しく入力してください。\n";
-            }
-
-            if (nouki === "" || isNaN(nouki)) {
-                errorMessage += "納期を正しく入力してください。\n";
-            }
-
-            if (errorMessage !== "") {
-                alert(errorMessage);
-                return false;
-            }
-
-            return true;
-        }
-    </script>
 </head>
 <body>
 <h1>仕入先TBL</h1>
