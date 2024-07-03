@@ -48,7 +48,8 @@
 </head>
 <body>
 <h1>レコード追加</h1>
-     <form action="/add_supplier" method="post">
+     <form action="{% url 'register_vender' %}" method="POST">
+         {% csrf_token %}
         <label for="shiireid">仕入先ID:</label>
         <input type="text" id="shiireid" name="shiireid" required><br><br>
 

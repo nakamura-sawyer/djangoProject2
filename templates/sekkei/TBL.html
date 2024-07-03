@@ -5,28 +5,27 @@
     <title>仕入先TBL</title>
 </head>
 <body>
-<h1>仕入先TBL</h1>
-<form action="/register_supplier" method="post">
-        <label for="shiireid">仕入先ID:</label>
-        <input type="text" id="shiireid" name="shiireid"><br><br>
-
-        <label for="shiiremei">仕入先名:</label>
-        <input type="text" id="shiiremei" name="shiiremei"><br><br>
-
-        <label for="shiireaddress">仕入先住所:</label>
-        <input type="text" id="shiireaddress" name="shiireaddress"><br><br>
-
-        <label for="shiiretel">仕入先電話番号:</label>
-        <input type="text" id="shiiretel" name="shiiretel"><br><br>
-
-        <label for="shihonkin">資本金:</label>
-        <input type="number" id="shihonkin" name="shihonkin"><br><br>
-
-        <label for="nouki">納期:</label>
-        <input type="number" id="nouki" name="nouki"><br><br>
-
-        <input type="submit" value="検索">
-    </form>
+<h1>仕入先リスト</h1>
+<table border="1">
+    <tr>
+        <th>仕入先ID</th>
+        <th>仕入先名</th>
+        <th>住所</th>
+        <th>電話番号</th>
+        <th>資本金</th>
+        <th>納期</th>
+    </tr>
+     {% for shiiregyosha in shiiregyosha_list %}
+    <tr>
+        <td>{{ shiiregyosha.shiireid }}</td>
+        <td>{{ shiiregyosha.shiiremei }}</td>
+        <td>{{ shiiregyosha.shiireaddress }}</td>
+        <td>{{ shiiregyosha.shiiretel }}</td>
+        <td>{{ shiiregyosha.shihonkin }}</td>
+        <td>{{ shiiregyosha.nouki }}</td>
+    </tr>
+    {% endfor %}
+</table>
 <a href="{% url 'home_kanrisya' %}">
 <p>戻る</p></a>
 </body>

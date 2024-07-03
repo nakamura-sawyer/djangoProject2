@@ -61,9 +61,33 @@ def juugyouin(request):
 
 
 def TBL(request):
-    return render(request, 'sekkei/TBL.html')
+    shiiregyosha_list = Shiiregyosha.objects.all()
+    return render(request, 'sekkei/TBL.html', {'shiiregyosha_list': shiiregyosha_list})
 
+def register_vender(request):
+    if request.method == 'POST':
+        shiireid = request.POST['shiireid']
+        shiiremei = request.POST['shiiremei']
+        shiireaddress = request.POST['shiireaddress']
+        shiiretel = request.POST['shiiretel']
+        shihonkin = request.POST['shihonkin']
+        nouki = request.POST['nouki']
+        shiiregyosha = Shiiregyosha(
+            shiireid=shiireid,
+            shiiremei=shiiremei,
+            shiireaddress=shiireaddress,
+            shiiretel=shiiretel,
+            shihonkin=shihonkin,
+            nouki=nouki,
+        )
 
+        shiiregyosha.save()
+
+        return redirect('vender_success')
+    else:
+        return render(request, 'sekkei/error.html')
+def vender_success(request):
+    return render(request,'sekkei/gyoshatuika_success.html')
 def recode(request):
     return render(request, 'sekkei/recodetsuika.html')
 
