@@ -30,3 +30,4 @@ class Patient(models.Model):
     patlname = models.CharField(max_length=64)
     hokenmei = models.CharField(max_length=64)
     hokenexp = models.DateField()
+

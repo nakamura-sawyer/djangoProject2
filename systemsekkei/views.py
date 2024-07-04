@@ -250,11 +250,24 @@ def home_doctor(request):
 def kensaku2(request):
     patients = Patient.objects.all()
     return render(request, 'sekkei/kanjakensaku.html', {'patients': patients})
+def add(request):
+    if request.method == 'POST':
+        patid = request.POST.get('patd')
+        medicineid = request.POST.get('medicineid')
+        unit = request.POST.get('unit')
+
+        return redirect('confirmation')
+    else:
+        medicines = Medicine.objects.all()
+        return render(request, 'sekkei/kusurishiji.html', {'medicines': medicines})
 def shiji(request):
     return render(request, 'sekkei/kusurishiji.html')
+
 def sakujo(request):
     return render(request, 'sekkei/kusurisakujo.html')
+
 def kakutei(request):
     return render(request, 'sekkei/kakutei.html')
+
 def rireki(request):
     return render(request, 'sekkei/rirekikakunin.html')
