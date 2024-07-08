@@ -5,7 +5,7 @@ from datetime import datetime
 from systemsekkei.models import Employee
 from systemsekkei.models import Shiiregyosha
 from systemsekkei.models import Patient
-from systemsekkei.models import Medicine
+from systemsekkei.models import Prescription, Medicine
 
 
 def index(request):
@@ -243,7 +243,6 @@ def search_name(request):
 def kensaku(request):
     return render(request, 'sekkei/kanjameikensaku.html')
 
-
 def home_doctor(request):
     return render(request, 'sekkei/home_doctor.html')
 
@@ -252,21 +251,36 @@ def kensaku2(request):
     return render(request, 'sekkei/kanjakensaku.html', {'patients': patients})
 def add(request):
     if request.method == 'POST':
-        patid = request.POST.get('patd')
-        medicineid = request.POST.get('medicineid')
-        unit = request.POST.get('unit')
+        patient_id = request.POST.get('patient_id')
+        medicine_id = request.POST.get('medicine_id')
+        dosage = request.POST.get('dosage')
 
-        return redirect('confirmation')
-    else:
-        medicines = Medicine.objects.all()
-        return render(request, 'sekkei/kusurishiji.html', {'medicines': medicines})
+        try:
+            patient = Patient.objects.get(patient_id=patient_id)
+            medicine = Medicine.objects.get(medicine_id=medicine_id)
+            prescription = Prescription(patient=patient, medicine=medicine, dosage=dosage)
+            prescription.save()
+            return redirect('confirm_prescription')
+        except (Patient.DoesNotExist, Medicine.DoesNotExist):
+            return HttpResponse('Invalid patient ID or medicine ID')
+
+    patients = Patient.objects.all()
+    medicines = Medicine.objects.all()
+    return render(request, 'sekkei/kakutei.html', {'patients': patients, 'medicines': medicines})
 def shiji(request):
     return render(request, 'sekkei/kusurishiji.html')
 
-def sakujo(request):
-    return render(request, 'sekkei/kusurisakujo.html')
-
 def kakutei(request):
+    if request.method == 'POST':
+        action = request.POST.get('action')
+        if action == 'confirm':
+            # 処置確定のロジックを追加
+            return HttpResponse('処置確定しました')
+        elif action == 'delete':
+            # 削除のロジックを追加
+            return HttpResponse('削除しました')
+
+    prescriptions = Prescription.objects.all()
     return render(request, 'sekkei/kakutei.html')
 
 def rireki(request):

@@ -3,17 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <title>処置確定</title>
+<title>薬投与確認</title>
 </head>
 <body>
-<h1>処置確定</h1>
-<form action="/confirm-procedure" method="post">
-        <label for="patient__id">患者ID:</label>
-        <input type="text" id="patient_id" name="patient-id" required>
-        <br>
-        <label for="procedure">処置内容:</label>
-        <textarea id="procedure" name="procedure" required></textarea>
-        <br>
-        <button type="submit">確定</button>
+    <h1>薬投与確認</h1>
+    <ul>
+        {% for prescription in prescriptions %}
+            <li>{{ prescription.patient.name }} - {{ prescription.medicine.medicine_name }} - {{ prescription.dosage }} {{ prescription.medicine.unit }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'shiji' %}">薬剤選択画面へ戻る</a>
+    <form method="post" action="{% url 'kakutei' %}">
+        {% csrf_token %}
+        <button type="submit" name="action" value="confirm">処置確定</button>
+        <button type="submit" name="action" value="delete">削除</button>
     </form>
 <a href="{% url 'home_doctor' %}">
     <p>戻る</p></a>

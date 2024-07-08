@@ -1008,7 +1008,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </schema>
     <schema id="277" parent="1" name="r4a148">
       <Current>1</Current>
-      <LastIntrospectionLocalTimestamp>2024-07-04.02:55:36</LastIntrospectionLocalTimestamp>
+      <LastIntrospectionLocalTimestamp>2024-07-08.01:42:13</LastIntrospectionLocalTimestamp>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <schema id="278" parent="1" name="sakila">
@@ -1095,601 +1095,654 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="299" parent="277" name="systemsekkei_shiiregyosha">
+    <table id="299" parent="277" name="systemsekkei_prescription">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <column id="300" parent="286" name="id">
+    <table id="300" parent="277" name="systemsekkei_shiiregyosha">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <column id="301" parent="286" name="id">
       <AutoIncrement>1</AutoIncrement>
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="301" parent="286" name="name">
+    <column id="302" parent="286" name="name">
       <DasType>varchar(150)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <index id="302" parent="286" name="PRIMARY">
+    <index id="303" parent="286" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="303" parent="286" name="name">
+    <index id="304" parent="286" name="name">
       <ColNames>name</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="304" parent="286" name="PRIMARY">
+    <key id="305" parent="286" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <key id="305" parent="286" name="name">
+    <key id="306" parent="286" name="name">
       <UnderlyingIndexName>name</UnderlyingIndexName>
     </key>
-    <column id="306" parent="287" name="id">
+    <column id="307" parent="287" name="id">
       <AutoIncrement>1</AutoIncrement>
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="307" parent="287" name="group_id">
+    <column id="308" parent="287" name="group_id">
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="308" parent="287" name="permission_id">
+    <column id="309" parent="287" name="permission_id">
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <foreign-key id="309" parent="287" name="auth_group_permissions_group_id_b120cbf9_fk_auth_group_id">
+    <foreign-key id="310" parent="287" name="auth_group_permissions_group_id_b120cbf9_fk_auth_group_id">
       <ColNames>group_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>auth_group</RefTableName>
     </foreign-key>
-    <foreign-key id="310" parent="287" name="auth_group_permissio_permission_id_84c5c92e_fk_auth_perm">
+    <foreign-key id="311" parent="287" name="auth_group_permissio_permission_id_84c5c92e_fk_auth_perm">
       <ColNames>permission_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>auth_permission</RefTableName>
     </foreign-key>
-    <index id="311" parent="287" name="PRIMARY">
+    <index id="312" parent="287" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="312" parent="287" name="auth_group_permissions_group_id_permission_id_0cd325b0_uniq">
+    <index id="313" parent="287" name="auth_group_permissions_group_id_permission_id_0cd325b0_uniq">
       <ColNames>group_id
 permission_id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="313" parent="287" name="auth_group_permissio_permission_id_84c5c92e_fk_auth_perm">
+    <index id="314" parent="287" name="auth_group_permissio_permission_id_84c5c92e_fk_auth_perm">
       <ColNames>permission_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="314" parent="287" name="PRIMARY">
+    <key id="315" parent="287" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <key id="315" parent="287" name="auth_group_permissions_group_id_permission_id_0cd325b0_uniq">
+    <key id="316" parent="287" name="auth_group_permissions_group_id_permission_id_0cd325b0_uniq">
       <UnderlyingIndexName>auth_group_permissions_group_id_permission_id_0cd325b0_uniq</UnderlyingIndexName>
     </key>
-    <column id="316" parent="288" name="id">
+    <column id="317" parent="288" name="id">
       <AutoIncrement>41</AutoIncrement>
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="317" parent="288" name="name">
+    <column id="318" parent="288" name="name">
       <DasType>varchar(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="318" parent="288" name="content_type_id">
+    <column id="319" parent="288" name="content_type_id">
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="319" parent="288" name="codename">
+    <column id="320" parent="288" name="codename">
       <DasType>varchar(100)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <foreign-key id="320" parent="288" name="auth_permission_content_type_id_2f476e4b_fk_django_co">
+    <foreign-key id="321" parent="288" name="auth_permission_content_type_id_2f476e4b_fk_django_co">
       <ColNames>content_type_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>django_content_type</RefTableName>
     </foreign-key>
-    <index id="321" parent="288" name="PRIMARY">
+    <index id="322" parent="288" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="322" parent="288" name="auth_permission_content_type_id_codename_01ab375a_uniq">
+    <index id="323" parent="288" name="auth_permission_content_type_id_codename_01ab375a_uniq">
       <ColNames>content_type_id
 codename</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="323" parent="288" name="PRIMARY">
+    <key id="324" parent="288" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <key id="324" parent="288" name="auth_permission_content_type_id_codename_01ab375a_uniq">
+    <key id="325" parent="288" name="auth_permission_content_type_id_codename_01ab375a_uniq">
       <UnderlyingIndexName>auth_permission_content_type_id_codename_01ab375a_uniq</UnderlyingIndexName>
     </key>
-    <column id="325" parent="289" name="id">
+    <column id="326" parent="289" name="id">
       <AutoIncrement>1</AutoIncrement>
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="326" parent="289" name="password">
+    <column id="327" parent="289" name="password">
       <DasType>varchar(128)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="327" parent="289" name="last_login">
+    <column id="328" parent="289" name="last_login">
       <DasType>datetime(6)|0s</DasType>
       <Position>3</Position>
     </column>
-    <column id="328" parent="289" name="is_superuser">
+    <column id="329" parent="289" name="is_superuser">
       <DasType>tinyint(1)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="329" parent="289" name="username">
+    <column id="330" parent="289" name="username">
       <DasType>varchar(150)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <column id="330" parent="289" name="first_name">
+    <column id="331" parent="289" name="first_name">
       <DasType>varchar(150)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
-    <column id="331" parent="289" name="last_name">
+    <column id="332" parent="289" name="last_name">
       <DasType>varchar(150)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>7</Position>
     </column>
-    <column id="332" parent="289" name="email">
+    <column id="333" parent="289" name="email">
       <DasType>varchar(254)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>8</Position>
     </column>
-    <column id="333" parent="289" name="is_staff">
+    <column id="334" parent="289" name="is_staff">
       <DasType>tinyint(1)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>9</Position>
     </column>
-    <column id="334" parent="289" name="is_active">
+    <column id="335" parent="289" name="is_active">
       <DasType>tinyint(1)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>10</Position>
     </column>
-    <column id="335" parent="289" name="date_joined">
+    <column id="336" parent="289" name="date_joined">
       <DasType>datetime(6)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>11</Position>
     </column>
-    <index id="336" parent="289" name="PRIMARY">
+    <index id="337" parent="289" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="337" parent="289" name="username">
+    <index id="338" parent="289" name="username">
       <ColNames>username</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="338" parent="289" name="PRIMARY">
+    <key id="339" parent="289" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <key id="339" parent="289" name="username">
+    <key id="340" parent="289" name="username">
       <UnderlyingIndexName>username</UnderlyingIndexName>
     </key>
-    <column id="340" parent="290" name="id">
+    <column id="341" parent="290" name="id">
       <AutoIncrement>1</AutoIncrement>
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="341" parent="290" name="user_id">
+    <column id="342" parent="290" name="user_id">
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="342" parent="290" name="group_id">
+    <column id="343" parent="290" name="group_id">
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <foreign-key id="343" parent="290" name="auth_user_groups_user_id_6a12ed8b_fk_auth_user_id">
+    <foreign-key id="344" parent="290" name="auth_user_groups_user_id_6a12ed8b_fk_auth_user_id">
       <ColNames>user_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>auth_user</RefTableName>
     </foreign-key>
-    <foreign-key id="344" parent="290" name="auth_user_groups_group_id_97559544_fk_auth_group_id">
+    <foreign-key id="345" parent="290" name="auth_user_groups_group_id_97559544_fk_auth_group_id">
       <ColNames>group_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>auth_group</RefTableName>
     </foreign-key>
-    <index id="345" parent="290" name="PRIMARY">
+    <index id="346" parent="290" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="346" parent="290" name="auth_user_groups_user_id_group_id_94350c0c_uniq">
+    <index id="347" parent="290" name="auth_user_groups_user_id_group_id_94350c0c_uniq">
       <ColNames>user_id
 group_id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="347" parent="290" name="auth_user_groups_group_id_97559544_fk_auth_group_id">
+    <index id="348" parent="290" name="auth_user_groups_group_id_97559544_fk_auth_group_id">
       <ColNames>group_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="348" parent="290" name="PRIMARY">
+    <key id="349" parent="290" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <key id="349" parent="290" name="auth_user_groups_user_id_group_id_94350c0c_uniq">
+    <key id="350" parent="290" name="auth_user_groups_user_id_group_id_94350c0c_uniq">
       <UnderlyingIndexName>auth_user_groups_user_id_group_id_94350c0c_uniq</UnderlyingIndexName>
     </key>
-    <column id="350" parent="291" name="id">
+    <column id="351" parent="291" name="id">
       <AutoIncrement>1</AutoIncrement>
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="351" parent="291" name="user_id">
+    <column id="352" parent="291" name="user_id">
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="352" parent="291" name="permission_id">
+    <column id="353" parent="291" name="permission_id">
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <foreign-key id="353" parent="291" name="auth_user_user_permissions_user_id_a95ead1b_fk_auth_user_id">
+    <foreign-key id="354" parent="291" name="auth_user_user_permissions_user_id_a95ead1b_fk_auth_user_id">
       <ColNames>user_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>auth_user</RefTableName>
     </foreign-key>
-    <foreign-key id="354" parent="291" name="auth_user_user_permi_permission_id_1fbb5f2c_fk_auth_perm">
+    <foreign-key id="355" parent="291" name="auth_user_user_permi_permission_id_1fbb5f2c_fk_auth_perm">
       <ColNames>permission_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>auth_permission</RefTableName>
     </foreign-key>
-    <index id="355" parent="291" name="PRIMARY">
+    <index id="356" parent="291" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="356" parent="291" name="auth_user_user_permissions_user_id_permission_id_14a6b632_uniq">
+    <index id="357" parent="291" name="auth_user_user_permissions_user_id_permission_id_14a6b632_uniq">
       <ColNames>user_id
 permission_id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="357" parent="291" name="auth_user_user_permi_permission_id_1fbb5f2c_fk_auth_perm">
+    <index id="358" parent="291" name="auth_user_user_permi_permission_id_1fbb5f2c_fk_auth_perm">
       <ColNames>permission_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="358" parent="291" name="PRIMARY">
+    <key id="359" parent="291" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <key id="359" parent="291" name="auth_user_user_permissions_user_id_permission_id_14a6b632_uniq">
+    <key id="360" parent="291" name="auth_user_user_permissions_user_id_permission_id_14a6b632_uniq">
       <UnderlyingIndexName>auth_user_user_permissions_user_id_permission_id_14a6b632_uniq</UnderlyingIndexName>
     </key>
-    <check id="360" parent="292" name="django_admin_log_chk_1">
+    <check id="361" parent="292" name="django_admin_log_chk_1">
       <NameSurrogate>1</NameSurrogate>
       <Predicate>`action_flag` &gt;= 0</Predicate>
     </check>
-    <column id="361" parent="292" name="id">
+    <column id="362" parent="292" name="id">
       <AutoIncrement>1</AutoIncrement>
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="362" parent="292" name="action_time">
+    <column id="363" parent="292" name="action_time">
       <DasType>datetime(6)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="363" parent="292" name="object_id">
+    <column id="364" parent="292" name="object_id">
       <DasType>longtext|0s</DasType>
       <Position>3</Position>
     </column>
-    <column id="364" parent="292" name="object_repr">
+    <column id="365" parent="292" name="object_repr">
       <DasType>varchar(200)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="365" parent="292" name="action_flag">
+    <column id="366" parent="292" name="action_flag">
       <DasType>smallint unsigned|0s</DasType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <column id="366" parent="292" name="change_message">
+    <column id="367" parent="292" name="change_message">
       <DasType>longtext|0s</DasType>
       <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
-    <column id="367" parent="292" name="content_type_id">
+    <column id="368" parent="292" name="content_type_id">
       <DasType>int|0s</DasType>
       <Position>7</Position>
     </column>
-    <column id="368" parent="292" name="user_id">
+    <column id="369" parent="292" name="user_id">
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>8</Position>
     </column>
-    <foreign-key id="369" parent="292" name="django_admin_log_content_type_id_c4bce8eb_fk_django_co">
+    <foreign-key id="370" parent="292" name="django_admin_log_content_type_id_c4bce8eb_fk_django_co">
       <ColNames>content_type_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>django_content_type</RefTableName>
     </foreign-key>
-    <foreign-key id="370" parent="292" name="django_admin_log_user_id_c564eba6_fk_auth_user_id">
+    <foreign-key id="371" parent="292" name="django_admin_log_user_id_c564eba6_fk_auth_user_id">
       <ColNames>user_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>auth_user</RefTableName>
     </foreign-key>
-    <index id="371" parent="292" name="PRIMARY">
+    <index id="372" parent="292" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="372" parent="292" name="django_admin_log_content_type_id_c4bce8eb_fk_django_co">
+    <index id="373" parent="292" name="django_admin_log_content_type_id_c4bce8eb_fk_django_co">
       <ColNames>content_type_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="373" parent="292" name="django_admin_log_user_id_c564eba6_fk_auth_user_id">
+    <index id="374" parent="292" name="django_admin_log_user_id_c564eba6_fk_auth_user_id">
       <ColNames>user_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="374" parent="292" name="PRIMARY">
+    <key id="375" parent="292" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="375" parent="293" name="id">
+    <column id="376" parent="293" name="id">
       <AutoIncrement>11</AutoIncrement>
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="376" parent="293" name="app_label">
+    <column id="377" parent="293" name="app_label">
       <DasType>varchar(100)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="377" parent="293" name="model">
+    <column id="378" parent="293" name="model">
       <DasType>varchar(100)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <index id="378" parent="293" name="PRIMARY">
+    <index id="379" parent="293" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="379" parent="293" name="django_content_type_app_label_model_76bd3d3b_uniq">
+    <index id="380" parent="293" name="django_content_type_app_label_model_76bd3d3b_uniq">
       <ColNames>app_label
 model</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="380" parent="293" name="PRIMARY">
+    <key id="381" parent="293" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <key id="381" parent="293" name="django_content_type_app_label_model_76bd3d3b_uniq">
+    <key id="382" parent="293" name="django_content_type_app_label_model_76bd3d3b_uniq">
       <UnderlyingIndexName>django_content_type_app_label_model_76bd3d3b_uniq</UnderlyingIndexName>
     </key>
-    <column id="382" parent="294" name="id">
+    <column id="383" parent="294" name="id">
       <AutoIncrement>20</AutoIncrement>
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="383" parent="294" name="app">
+    <column id="384" parent="294" name="app">
       <DasType>varchar(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="384" parent="294" name="name">
+    <column id="385" parent="294" name="name">
       <DasType>varchar(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="385" parent="294" name="applied">
+    <column id="386" parent="294" name="applied">
       <DasType>datetime(6)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <index id="386" parent="294" name="PRIMARY">
+    <index id="387" parent="294" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="387" parent="294" name="PRIMARY">
+    <key id="388" parent="294" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="388" parent="295" name="session_key">
+    <column id="389" parent="295" name="session_key">
       <DasType>varchar(40)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="389" parent="295" name="session_data">
+    <column id="390" parent="295" name="session_data">
       <DasType>longtext|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="390" parent="295" name="expire_date">
+    <column id="391" parent="295" name="expire_date">
       <DasType>datetime(6)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <index id="391" parent="295" name="PRIMARY">
+    <index id="392" parent="295" name="PRIMARY">
       <ColNames>session_key</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="392" parent="295" name="django_session_expire_date_a5c62663">
+    <index id="393" parent="295" name="django_session_expire_date_a5c62663">
       <ColNames>expire_date</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="393" parent="295" name="PRIMARY">
+    <key id="394" parent="295" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="394" parent="296" name="empid">
+    <column id="395" parent="296" name="empid">
       <DasType>varchar(8)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="395" parent="296" name="empfname">
+    <column id="396" parent="296" name="empfname">
       <DasType>varchar(64)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="396" parent="296" name="emplname">
+    <column id="397" parent="296" name="emplname">
       <DasType>varchar(64)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="397" parent="296" name="emppasswd">
+    <column id="398" parent="296" name="emppasswd">
       <DasType>varchar(256)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="398" parent="296" name="emprole">
+    <column id="399" parent="296" name="emprole">
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <index id="399" parent="296" name="PRIMARY">
+    <index id="400" parent="296" name="PRIMARY">
       <ColNames>empid</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="400" parent="296" name="PRIMARY">
+    <key id="401" parent="296" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="401" parent="297" name="medicineid">
+    <column id="402" parent="297" name="medicineid">
       <DasType>varchar(8)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="402" parent="297" name="medicinename">
+    <column id="403" parent="297" name="medicinename">
       <DasType>varchar(64)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="403" parent="297" name="unit">
+    <column id="404" parent="297" name="unit">
       <DasType>varchar(8)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <index id="404" parent="297" name="PRIMARY">
+    <index id="405" parent="297" name="PRIMARY">
       <ColNames>medicineid</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="405" parent="297" name="PRIMARY">
+    <key id="406" parent="297" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="406" parent="298" name="patid">
+    <column id="407" parent="298" name="patid">
       <DasType>varchar(8)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="407" parent="298" name="patfname">
+    <column id="408" parent="298" name="patfname">
       <DasType>varchar(64)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="408" parent="298" name="patlname">
+    <column id="409" parent="298" name="patlname">
       <DasType>varchar(64)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="409" parent="298" name="hokenmei">
+    <column id="410" parent="298" name="hokenmei">
       <DasType>varchar(64)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="410" parent="298" name="hokenexp">
+    <column id="411" parent="298" name="hokenexp">
       <DasType>date|0s</DasType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <index id="411" parent="298" name="PRIMARY">
+    <index id="412" parent="298" name="PRIMARY">
       <ColNames>patid</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="412" parent="298" name="PRIMARY">
+    <key id="413" parent="298" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="413" parent="299" name="shiireid">
+    <column id="414" parent="299" name="id">
+      <AutoIncrement>1</AutoIncrement>
+      <DasType>bigint|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="415" parent="299" name="dosage">
+      <DasType>int|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="416" parent="299" name="medicine_id">
+      <DasType>varchar(8)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="417" parent="299" name="patient_id">
+      <DasType>varchar(8)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+    </column>
+    <foreign-key id="418" parent="299" name="systemsekkei_prescri_medicine_id_463c977b_fk_systemsek">
+      <ColNames>medicine_id</ColNames>
+      <RefColNames>medicineid</RefColNames>
+      <RefTableName>systemsekkei_medicine</RefTableName>
+    </foreign-key>
+    <foreign-key id="419" parent="299" name="systemsekkei_prescri_patient_id_e0cb1541_fk_systemsek">
+      <ColNames>patient_id</ColNames>
+      <RefColNames>patid</RefColNames>
+      <RefTableName>systemsekkei_patient</RefTableName>
+    </foreign-key>
+    <index id="420" parent="299" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="421" parent="299" name="systemsekkei_prescri_medicine_id_463c977b_fk_systemsek">
+      <ColNames>medicine_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="422" parent="299" name="systemsekkei_prescri_patient_id_e0cb1541_fk_systemsek">
+      <ColNames>patient_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="423" parent="299" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="424" parent="300" name="shiireid">
       <DasType>varchar(8)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="414" parent="299" name="shiiremei">
+    <column id="425" parent="300" name="shiiremei">
       <DasType>varchar(64)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="415" parent="299" name="shiireaddress">
+    <column id="426" parent="300" name="shiireaddress">
       <DasType>varchar(64)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="416" parent="299" name="shiiretel">
+    <column id="427" parent="300" name="shiiretel">
       <DasType>varchar(13)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="417" parent="299" name="shihonkin">
+    <column id="428" parent="300" name="shihonkin">
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <column id="418" parent="299" name="nouki">
+    <column id="429" parent="300" name="nouki">
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
-    <index id="419" parent="299" name="PRIMARY">
+    <index id="430" parent="300" name="PRIMARY">
       <ColNames>shiireid</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="420" parent="299" name="PRIMARY">
+    <key id="431" parent="300" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>

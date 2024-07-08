@@ -14,6 +14,8 @@ class Medicine(models.Model):
     medicinename = models.CharField(max_length=64)
     unit = models.CharField(max_length=8)
 
+    def __str__(self):
+        return self.medicinename
 
 class Shiiregyosha(models.Model):
     shiireid = models.CharField(max_length=8, primary_key=True)
@@ -31,3 +33,13 @@ class Patient(models.Model):
     hokenmei = models.CharField(max_length=64)
     hokenexp = models.DateField()
 
+    def __str__(self):
+        return f"{self.patid}: {self.patfname} {self.patlname}"
+
+class Prescription(models.Model):
+    patient = models.ForeignKey(Patient, on_delete=models.CASCADE)
+    medicine = models.ForeignKey(Medicine, on_delete=models.CASCADE)
+    dosage = models.IntegerField()
+
+    def __str__(self):
+        return f"{self.patient} - {self.medicine}: {self.dosage} {self.medicine.unit}"

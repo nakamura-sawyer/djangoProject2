@@ -8,9 +8,13 @@
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/dda8d482-7918-4196-a8f2-9ec2d9924e6b.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/dda8d482-7918-4196-a8f2-9ec2d9924e6b.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/systemsekkei/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/systemsekkei/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/systemsekkei/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/systemsekkei/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/systemsekkei/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/systemsekkei/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/sekkei/gyoshatuika_success.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sekkei/gyoshatuika_success.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/sekkei/home_doctor.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sekkei/home_doctor.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/sekkei/kakutei.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sekkei/kakutei.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/sekkei/kusurisakujo.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/sekkei/kusurishiji.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sekkei/kusurishiji.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/sekkei/rirekikakunin.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sekkei/rirekikakunin.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +24,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -158,7 +162,9 @@
       <workItem from="1719548179509" duration="11000" />
       <workItem from="1719884890558" duration="5943000" />
       <workItem from="1719977914513" duration="7788000" />
-      <workItem from="1720050783190" duration="9937000" />
+      <workItem from="1720050783190" duration="11953000" />
+      <workItem from="1720137344640" duration="8866000" />
+      <workItem from="1720396584228" duration="9713000" />
     </task>
     <task id="LOCAL-00001" summary="07/02">
       <option name="closed" value="true" />
@@ -216,7 +222,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720062403511</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="07/02">
+      <option name="closed" value="true" />
+      <created>1720062447649</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1720062447649</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -236,16 +250,5 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="07/02" />
     <option name="LAST_COMMIT_MESSAGE" value="07/02" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/systemsekkei/views.py</url>
-          <line>269</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
