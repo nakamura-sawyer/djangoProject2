@@ -290,18 +290,14 @@ def history(request):
         patient_id = request.POST['patient_id']
 
         try:
-            patient = Patient.objects.get(patient_id=patient_id)
+            patient = Patient.objects.get(patid=patient_id)  # 修正ポイント
             prescriptions = Prescription.objects.filter(patient=patient)
+
+            return render(request, 'sekkei/history.html', {'patient': patient, 'prescriptions': prescriptions})
         except Patient.DoesNotExist:
-            patient = None
-            prescriptions = None
+            # 患者が見つからなかった場合のエラーハンドリング
+            pass
 
-        if prescriptions and prescriptions.exists():
-            return render(request, 'sekkei/history.html',
-                          {'patient': patient, 'prescriptions': prescriptions})
-        else:
-            return render(request, 'sekkei/history.html', {'patient': patient, 'no_history': True})
-
-    return render(request, 'sekkei/rirekikakunin.html')
+    return render(request, 'sekkei/history.html')
 def rireki(request):
     return render(request, 'sekkei/rirekikakunin.html')

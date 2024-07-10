@@ -5,17 +5,28 @@
 </head>
 <body>
     <h1>処置履歴</h1>
-    {% if no_history %}
-        <p>該当する患者には処置履歴がありません。</p>
+    {% if patient %}
+    <h2>患者情報</h2>
+    <p>患者ID: {{ patient.patid }}</p>
+    <p>名前: {{ patient.patfname }} {{ patient.patlname }}</p>
+
+    <h2>処方履歴</h2>
+    <table>
+        <tr>
+            <th>薬剤名</th>
+            <th>投与量</th>
+            <th>投与日</th>
+        </tr>
+        {% for prescription in prescriptions %}
+        <tr>
+            <td>{{ prescription.medicine.medicine_name }}</td>
+            <td>{{ prescription.dosage }}</td>
+            <td>{{ prescription.date_prescribed }}</td>
+        </tr>
+        {% endfor %}
+    </table>
     {% else %}
-        <p>患者ID: {{ patient.patient_id }}</p>
-        <p>名前: {{ patient.name }}</p>
-        <h2>処置履歴</h2>
-        <ul>
-            {% for prescription in prescriptions %}
-                <li>{{ prescription.date }}: {{ prescription.medicine.medicine_name }} - 投与量: {{ prescription.dosage }}</li>
-            {% endfor %}
-        </ul>
+    <p>該当する患者が見つかりませんでした。</p>
     {% endif %}
     <a href="{% url 'home_doctor' %}">戻る</a>
 </body>

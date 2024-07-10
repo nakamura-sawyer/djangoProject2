@@ -6,6 +6,7 @@
 <title>薬投与確認</title>
 </head>
 <body>
+<form method="GET">
     <h1>処置確定</h1>
     <table>
         <tr>
@@ -21,7 +22,7 @@
         </tr>
         {% endfor %}
     </table>
-    <a href="{% url 'shiji' %}">薬剤選択画面へ戻る</a>
+    <a href="{% url 'shiji' %}">薬剤選択画面へ戻る</a><br>
     <form method="post" action="{% url 'kakutei' %}">
         {% csrf_token %}
         <button type="submit" name="action" value="confirm">処置確定</button>
