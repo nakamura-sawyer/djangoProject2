@@ -6,12 +6,21 @@
 <title>薬投与確認</title>
 </head>
 <body>
-    <h1>薬投与確認</h1>
-    <ul>
+    <h1>処置確定</h1>
+    <table>
+        <tr>
+            <th>患者ID</th>
+            <th>薬剤名</th>
+            <th>投与量</th>
+        </tr>
         {% for prescription in prescriptions %}
-            <li>{{ prescription.patient.name }} - {{ prescription.medicine.medicine_name }} - {{ prescription.dosage }} {{ prescription.medicine.unit }}</li>
+        <tr>
+            <td>{{ prescription.patient.patient_id }}</td>
+            <td>{{ prescription.medicine.medicine_name }}</td>
+            <td>{{ prescription.dosage }}</td>
+        </tr>
         {% endfor %}
-    </ul>
+    </table>
     <a href="{% url 'shiji' %}">薬剤選択画面へ戻る</a>
     <form method="post" action="{% url 'kakutei' %}">
         {% csrf_token %}

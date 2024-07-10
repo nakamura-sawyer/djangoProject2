@@ -33,5 +33,6 @@ urlpatterns = [
     path('add', views.add, name='add'),
     path('shiji', views.shiji, name='shiji'),
     path('kakutei', views.kakutei, name='kakutei'),
+    path('history', views.history, name='history'),
     path('rireki', views.rireki, name='rireki')
 ]

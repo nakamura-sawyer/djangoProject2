@@ -6,26 +6,19 @@
 </head>
 <body>
 <h1>薬投与指示</h1>
-    <form method="post">
+    <form method="POST" action = {% url 'kakutei' %}>
         {% csrf_token %}
-        <label for="patient_id">患者ID:</label>
-        <select name="patient_id" id="patient_id">
-            {% for patient in patients %}
-                <option value="{{ patient.patient_id }}">{{ patient.name }}</option>
-            {% endfor %}
-        </select>
-        <br>
-        <label for="medicine_id">薬を選択:</label>
-        <select name="medicine_id" id="medicine_id">
+        患者ID:<input type="text" name="patient_id"><br>
+        薬を選択:
+        <select name="medicine">
             {% for medicine in medicines %}
-                <option value="{{ medicine.medicine_id }}">{{ medicine.medicine_name }}</option>
+            <option value="{{ medicine.medicineid }}">{{ medicine.medicinename }}</option>
             {% endfor %}
-        </select>
-        <br>
-        <label for="dosage">投与量:</label>
-        <input type="number" name="dosage" id="dosage">
-        <br>
-        <button type="submit">確認</button>
+        </select><br>
+
+       <label for="dosage">投与量:</label>
+        <input type="number" name="dosage" id="dosage"><br>
+    <input type="submit" value="確認画面へ">
     </form>
 <a href="{% url 'home_doctor' %}">
 <p>戻る</p></a>

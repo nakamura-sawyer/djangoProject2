@@ -250,25 +250,27 @@ def kensaku2(request):
     patients = Patient.objects.all()
     return render(request, 'sekkei/kanjakensaku.html', {'patients': patients})
 def add(request):
-    if request.method == 'POST':
-        patient_id = request.POST.get('patient_id')
-        medicine_id = request.POST.get('medicine_id')
-        dosage = request.POST.get('dosage')
+    if request.method == "POST":
+        patient_id = request.POST['patient_id']
+        medicine_id = request.POST['medicine']
+        dosage = request.POST['dosage']
 
-        try:
-            patient = Patient.objects.get(patient_id=patient_id)
-            medicine = Medicine.objects.get(medicine_id=medicine_id)
-            prescription = Prescription(patient=patient, medicine=medicine, dosage=dosage)
-            prescription.save()
-            return redirect('confirm_prescription')
-        except (Patient.DoesNotExist, Medicine.DoesNotExist):
-            return HttpResponse('Invalid patient ID or medicine ID')
+        patient = Patient.objects.get(patient_id=patient_id)
+        medicine = Medicine.objects.get(medicine_id=medicine_id)
 
-    patients = Patient.objects.all()
+        prescription = Prescription(patient=patient, medicine=medicine, dosage=dosage)
+        prescription.save()
+
+        return redirect('kakutei')
+
     medicines = Medicine.objects.all()
-    return render(request, 'sekkei/kakutei.html', {'patients': patients, 'medicines': medicines})
+    for medicine in medicines:
+        print(medicine.medicineid)
+    return render(request, 'sekkei/kusurishiji.html', {'medicines': medicines})
+
 def shiji(request):
-    return render(request, 'sekkei/kusurishiji.html')
+    medicines = Medicine.objects.all()
+    return render(request, 'sekkei/kusurishiji.html', {'medicines': medicines})
 
 def kakutei(request):
     if request.method == 'POST':
@@ -281,7 +283,25 @@ def kakutei(request):
             return HttpResponse('削除しました')
 
     prescriptions = Prescription.objects.all()
-    return render(request, 'sekkei/kakutei.html')
+    return render(request, 'sekkei/kakutei.html', {'prescriptions': prescriptions})
 
+def history(request):
+    if request.method == "POST":
+        patient_id = request.POST['patient_id']
+
+        try:
+            patient = Patient.objects.get(patient_id=patient_id)
+            prescriptions = Prescription.objects.filter(patient=patient)
+        except Patient.DoesNotExist:
+            patient = None
+            prescriptions = None
+
+        if prescriptions and prescriptions.exists():
+            return render(request, 'sekkei/history.html',
+                          {'patient': patient, 'prescriptions': prescriptions})
+        else:
+            return render(request, 'sekkei/history.html', {'patient': patient, 'no_history': True})
+
+    return render(request, 'sekkei/rirekikakunin.html')
 def rireki(request):
     return render(request, 'sekkei/rirekikakunin.html')

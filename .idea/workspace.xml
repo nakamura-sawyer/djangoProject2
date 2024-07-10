@@ -7,14 +7,11 @@
     <list default="true" id="647469f6-79cb-4036-8c21-9e6c7cbfed0b" name="変更" comment="07/02">
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/dda8d482-7918-4196-a8f2-9ec2d9924e6b.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/dda8d482-7918-4196-a8f2-9ec2d9924e6b.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/systemsekkei/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/systemsekkei/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/systemsekkei/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/systemsekkei/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/systemsekkei/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/systemsekkei/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/sekkei/gyoshatuika_success.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sekkei/gyoshatuika_success.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/sekkei/home_doctor.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sekkei/home_doctor.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/sekkei/kakutei.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sekkei/kakutei.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/sekkei/kusurisakujo.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/sekkei/kusurishiji.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sekkei/kusurishiji.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/sekkei/rirekikakunin.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sekkei/rirekikakunin.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,8 +21,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -164,7 +161,11 @@
       <workItem from="1719977914513" duration="7788000" />
       <workItem from="1720050783190" duration="11953000" />
       <workItem from="1720137344640" duration="8866000" />
-      <workItem from="1720396584228" duration="9713000" />
+      <workItem from="1720396584228" duration="11696000" />
+      <workItem from="1720410690659" duration="1127000" />
+      <workItem from="1720489711859" duration="1490000" />
+      <workItem from="1720491219888" duration="4589000" />
+      <workItem from="1720583762948" duration="1340000" />
     </task>
     <task id="LOCAL-00001" summary="07/02">
       <option name="closed" value="true" />
@@ -230,7 +231,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720062447649</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="07/02">
+      <option name="closed" value="true" />
+      <created>1720407288560</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1720407288560</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
