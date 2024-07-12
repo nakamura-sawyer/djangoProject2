@@ -1008,7 +1008,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </schema>
     <schema id="277" parent="1" name="r4a148">
       <Current>1</Current>
-      <LastIntrospectionLocalTimestamp>2024-07-10.03:56:59</LastIntrospectionLocalTimestamp>
+      <LastIntrospectionLocalTimestamp>2024-07-11.23:56:12</LastIntrospectionLocalTimestamp>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <schema id="278" parent="1" name="sakila">
@@ -1182,7 +1182,7 @@ permission_id</ColNames>
       <UnderlyingIndexName>auth_group_permissions_group_id_permission_id_0cd325b0_uniq</UnderlyingIndexName>
     </key>
     <column id="317" parent="288" name="id">
-      <AutoIncrement>45</AutoIncrement>
+      <AutoIncrement>44</AutoIncrement>
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -1469,7 +1469,7 @@ permission_id</ColNames>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="376" parent="293" name="id">
-      <AutoIncrement>12</AutoIncrement>
+      <AutoIncrement>11</AutoIncrement>
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -1504,7 +1504,7 @@ model</ColNames>
       <UnderlyingIndexName>django_content_type_app_label_model_76bd3d3b_uniq</UnderlyingIndexName>
     </key>
     <column id="383" parent="294" name="id">
-      <AutoIncrement>21</AutoIncrement>
+      <AutoIncrement>20</AutoIncrement>
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>

@@ -255,11 +255,16 @@ def add(request):
         medicine_id = request.POST['medicine']
         dosage = request.POST['dosage']
 
-        patient = Patient.objects.get(patient_id=patient_id)
-        medicine = Medicine.objects.get(medicine_id=medicine_id)
+        patient = Patient.objects.get(patid=patient_id)
+        medicine = Medicine.objects.get(medicineid=medicine_id)
 
-        prescription = Prescription(patient=patient, medicine=medicine, dosage=dosage)
-        prescription.save()
+        prescription_data = {
+            'patient_id': patient_id,
+            'medicine_id': medicine_id,
+            'medicine_name': medicine.medicinename,
+            'dosage': dosage
+        }
+        request.session['prescription_data'] = prescription_data
 
         return redirect('kakutei')
 
@@ -275,11 +280,23 @@ def shiji(request):
 def kakutei(request):
     if request.method == 'POST':
         action = request.POST.get('action')
+        action = 'confirm'
         if action == 'confirm':
-            # 処置確定のロジックを追加
-            return HttpResponse('処置確定しました')
+            patient_id = request.POST['patient_id']
+            medicine_id = request.POST['medicine']
+            dosage = request.POST['dosage']
+            print(patient_id, medicine_id, dosage)
+            prescription_data = request.session.get('prescription_data')
+            if prescription_data:
+
+                prescription = Prescription(patient=patient_id, medicine=medicine_id, dosage=dosage)
+                prescription.save()
+                del request.session['prescription_data']  # 保存後、セッションから削除
+                return HttpResponse('処置確定しました')
+
         elif action == 'delete':
-            # 削除のロジックを追加
+            if 'prescription_data' in request.session:
+                del request.session['prescription_data']
             return HttpResponse('削除しました')
 
     prescriptions = Prescription.objects.all()

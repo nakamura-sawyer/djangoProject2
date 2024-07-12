@@ -6,8 +6,8 @@
 <title>薬投与確認</title>
 </head>
 <body>
-<form method="GET">
     <h1>処置確定</h1>
+    {% if prescription_data %}
     <table>
         <tr>
             <th>患者ID</th>
@@ -16,12 +16,15 @@
         </tr>
         {% for prescription in prescriptions %}
         <tr>
-            <td>{{ prescription.patient.patient_id }}</td>
-            <td>{{ prescription.medicine.medicine_name }}</td>
-            <td>{{ prescription.dosage }}</td>
+            <td>{{ prescription_data.patient_id }}</td>
+            <td>{{ prescription_data.medicine_name }}</td>
+            <td>{{ prescription_data.dosage }}</td>
         </tr>
-        {% endfor %}
+    {% endfor %}
     </table>
+    {% else %}
+    <p>処方情報がありません。</p>
+    {% endif %}
     <a href="{% url 'shiji' %}">薬剤選択画面へ戻る</a><br>
     <form method="post" action="{% url 'kakutei' %}">
         {% csrf_token %}
