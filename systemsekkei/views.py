@@ -261,8 +261,8 @@ def add(request):
         prescription_data = {
             'patient_id': patient_id,
             'medicine_id': medicine_id,
-            'medicine_name': medicine.medicinename,
-            'dosage': dosage
+            'dosage': dosage,
+            'medicine_name': medicine.medicinename
         }
         request.session['prescription_data'] = prescription_data
 
@@ -278,30 +278,42 @@ def shiji(request):
     return render(request, 'sekkei/kusurishiji.html', {'medicines': medicines})
 
 def kakutei(request):
-    if request.method == 'POST':
-        action = request.POST.get('action')
-        action = 'confirm'
-        if action == 'confirm':
-            patient_id = request.POST['patient_id']
-            medicine_id = request.POST['medicine']
-            dosage = request.POST['dosage']
-            print(patient_id, medicine_id, dosage)
-            prescription_data = request.session.get('prescription_data')
-            if prescription_data:
+    try:
+        if request.method == 'POST':
+            action = request.POST.get('action')
+            if action == 'confirm':
+                patient_id = request.POST.get('patient')
+                medicine_id = request.POST.get('medicine')
+                dosage = request.POST.get('dosage')
+                if patient_id and medicine_id and dosage:
+                    print(patient_id, medicine_id, dosage)
+                    patient = Patient.objects.get(patid=patient_id)
+                    medicine = Medicine.objects.get(medicineid=medicine_id)
+                    prescription = Prescription(patient=patient, medicine=medicine, dosage=dosage)
+                    prescription.save()
 
-                prescription = Prescription(patient=patient_id, medicine=medicine_id, dosage=dosage)
-                prescription.save()
-                del request.session['prescription_data']  # 保存後、セッションから削除
-                return HttpResponse('処置確定しました')
+                    return redirect('confirm')
+                else:
+                    return HttpResponse('必要なデータが不足しています。')
 
-        elif action == 'delete':
-            if 'prescription_data' in request.session:
-                del request.session['prescription_data']
-            return HttpResponse('削除しました')
+            elif action == 'delete':
+                if 'prescription_data' in request.session:
+                    del request.session['prescription_data']
+                return redirect('delete')
 
-    prescriptions = Prescription.objects.all()
-    return render(request, 'sekkei/kakutei.html', {'prescriptions': prescriptions})
-
+            else:
+                patient_id = request.POST.get('patient_id')
+                medicine_id = request.POST.get('medicine')
+                dosage = request.POST.get('dosage')
+                return render(request, 'sekkei/kakutei.html', {'patient': patient_id, 'medicine': medicine_id, 'dosage': dosage})
+    except Exception as e:
+        # 新たな例外が発生した場合にエラーメッセージをログに記録する
+        print(f'エラーが発生しました: {str(e)}')
+        return HttpResponse('エラーが発生しました。')
+def confirm(request):
+    return render(request, 'sekkei/confirm.html')
+def delete(request):
+    return render(request, 'sekkei/delete.html')
 def history(request):
     if request.method == "POST":
         patient_id = request.POST['patient_id']

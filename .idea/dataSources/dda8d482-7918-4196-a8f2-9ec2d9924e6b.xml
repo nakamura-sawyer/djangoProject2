@@ -1008,7 +1008,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </schema>
     <schema id="277" parent="1" name="r4a148">
       <Current>1</Current>
-      <LastIntrospectionLocalTimestamp>2024-07-11.23:56:12</LastIntrospectionLocalTimestamp>
+      <LastIntrospectionLocalTimestamp>2024-07-16.05:36:47</LastIntrospectionLocalTimestamp>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <schema id="278" parent="1" name="sakila">
@@ -1504,7 +1504,7 @@ model</ColNames>
       <UnderlyingIndexName>django_content_type_app_label_model_76bd3d3b_uniq</UnderlyingIndexName>
     </key>
     <column id="383" parent="294" name="id">
-      <AutoIncrement>20</AutoIncrement>
+      <AutoIncrement>21</AutoIncrement>
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>

@@ -33,6 +33,8 @@ urlpatterns = [
     path('add', views.add, name='add'),
     path('shiji', views.shiji, name='shiji'),
     path('kakutei', views.kakutei, name='kakutei'),
+    path('confirm', views.confirm, name='confirm'),
+    path('delete', views.delete, name='delete'),
     path('history', views.history, name='history'),
     path('rireki', views.rireki, name='rireki')
 ]

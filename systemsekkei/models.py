@@ -41,5 +41,6 @@ class Prescription(models.Model):
     medicine = models.ForeignKey(Medicine, on_delete=models.CASCADE)
     dosage = models.IntegerField()
 
+
     def __str__(self):
         return f"{self.patient} - {self.medicine}: {self.dosage} {self.medicine.unit}"

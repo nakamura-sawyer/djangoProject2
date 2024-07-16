@@ -8,20 +8,18 @@
     {% if patient %}
     <h2>患者情報</h2>
     <p>患者ID: {{ patient.patid }}</p>
-    <p>名前: {{ patient.patfname }} {{ patient.patlname }}</p>
+    <p>名前: {{ patient.patlname }} {{ patient.patfname }}</p>
 
     <h2>処方履歴</h2>
     <table>
         <tr>
             <th>薬剤名</th>
             <th>投与量</th>
-            <th>投与日</th>
         </tr>
         {% for prescription in prescriptions %}
         <tr>
-            <td>{{ prescription.medicine.medicine_name }}</td>
+            <td>{{ prescription.medicine }}</td>
             <td>{{ prescription.dosage }}</td>
-            <td>{{ prescription.date_prescribed }}</td>
         </tr>
         {% endfor %}
     </table>

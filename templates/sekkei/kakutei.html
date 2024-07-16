@@ -7,20 +7,18 @@
 </head>
 <body>
     <h1>処置確定</h1>
-    {% if prescription_data %}
+    {% if patient %}
     <table>
         <tr>
             <th>患者ID</th>
             <th>薬剤名</th>
             <th>投与量</th>
         </tr>
-        {% for prescription in prescriptions %}
         <tr>
-            <td>{{ prescription_data.patient_id }}</td>
-            <td>{{ prescription_data.medicine_name }}</td>
-            <td>{{ prescription_data.dosage }}</td>
+            <td>{{ patient }}</td>
+            <td>{{ medicine }}</td>
+            <td>{{ dosage }}</td>
         </tr>
-    {% endfor %}
     </table>
     {% else %}
     <p>処方情報がありません。</p>
@@ -28,7 +26,12 @@
     <a href="{% url 'shiji' %}">薬剤選択画面へ戻る</a><br>
     <form method="post" action="{% url 'kakutei' %}">
         {% csrf_token %}
+        <input type="hidden" name="patient" value="{{ patient }}">
+        <input type="hidden" name="medicine" value="{{ medicine }}">
+        <input type="hidden" name="dosage" value="{{ dosage }}">
+        <input type="hidden" name="action" value="confirm">
         <button type="submit" name="action" value="confirm">処置確定</button>
+        
         <button type="submit" name="action" value="delete">削除</button>
     </form>
 <a href="{% url 'home_doctor' %}">
