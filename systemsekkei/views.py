@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, request
-from datetime import datetime
+from datetime import datetime, date
 
 from systemsekkei.models import Employee
 from systemsekkei.models import Shiiregyosha
@@ -226,13 +226,16 @@ def search_name(request):
         results = Patient.objects.filter(patfname__icontains=query) | Patient.objects.filter(patlname__icontains=query)
         result_list = []
         for result in results:
+            if isinstance(result.hokenexp, (datetime, date)):
+                hokenexp_formatted = result.hokenexp.strftime('%Y-%m-%d')
+            else:
+                hokenexp_formatted = result.hokenexp
             result_dict = {
                 'patid': result.patid,
                 'patfname': result.patfname,
                 'patlname': result.patlname,
                 'hokenmei': result.hokenmei,
-                'hokenexp': result.hokenexp.strftime('%Y-%m-%d') if isinstance(result.hokenexp,
-                                                                               datetime.date) else result.hokenexp
+                'hokenexp': hokenexp_formatted
             }
             result_list.append(result_dict)
     else:
