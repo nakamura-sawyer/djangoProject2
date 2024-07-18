@@ -29,12 +29,12 @@
                 errorMessage += "電話番号を入力してください。\n";
             }
 
-            if (shihonkin === "" || isNaN(shihonkin)) {
-                errorMessage += "資本金を正しく入力してください。\n";
+            if (shihonkin === "" || isNaN(shihonkin) || parseFloat(shihonkin) <= 0) {
+                errorMessage += "資本金を正しく入力してください（正の数でなければなりません）。\n";
             }
 
-            if (nouki === "" || isNaN(nouki)) {
-                errorMessage += "納期を正しく入力してください。\n";
+            if (nouki === "" || isNaN(nouki) || parseInt(nouki) <= 0) {
+                errorMessage += "納期を正しく入力してください（正の数でなければなりません）。\n";
             }
 
             if (errorMessage !== "") {

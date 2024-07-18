@@ -13,19 +13,29 @@ def index(request):
 
 
 def login(request):
+    if request.method == "POST":
+        empid = request.POST['empid']
+        password = request.POST['emppasswd']
+
+        try:
+            employee = Employee.objects.get(empid=empid)
+            if employee.emppasswd == password:
+                # ロールに基づいてリダイレクト
+                if employee.emprole == 2:
+                    return redirect('home_kanrisya')
+                elif employee.emprole == 1:
+                    return redirect('home_doctor')
+                elif employee.emprole == 0:
+                    return redirect('home_uketuke')
+                else:
+                    return HttpResponse('無効な役割です。')
+            else:
+                return HttpResponse('パスワードが間違っています。')
+        except Employee.DoesNotExist:
+            return HttpResponse('従業員IDが存在しません。')
     return render(request, 'sekkei/login.html')
-
-
-def homes(request):
-    role = request.POST['role']
-    if role == '管理者':
-        return render(request, 'sekkei/home_kanrisya.html')
-    elif role == '受付':
-        return render(request, 'sekkei/home_uketuke.html')
-    else:
-        return render(request, 'sekkei/home_doctor.html')
-
-
+def logout(request):
+    return render(request, 'sekkei/logout.html')
 def home_kanrisya(request):
     return render(request, 'sekkei/home_kanrisya.html')
 
