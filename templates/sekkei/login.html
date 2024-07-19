@@ -6,6 +6,9 @@
 </head>
 <body>
 <h1>ログイン</h1>
+{% if error_message %}
+        <p style="color: red;">{{ error_message }}</p>
+    {% endif %}
 <form id="loginForm" action="{% url 'login' %}" method="POST">
     {% csrf_token %}
     <label for="empid">従業員ID:</label>

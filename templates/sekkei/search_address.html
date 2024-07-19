@@ -7,7 +7,7 @@
 <body>
 {% if results %}
 <h2>検索結果</h2>
-
+<table border="1">
         <tbody>
         {% for result in results %}
             <tr>
@@ -20,6 +20,7 @@
             </tr>
         {% endfor %}
         </tbody>
+</table>
 {% else %}
     <p>検索結果がありません。</p>
 {% endif %}

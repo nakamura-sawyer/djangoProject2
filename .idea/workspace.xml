@@ -7,14 +7,11 @@
     <list default="true" id="647469f6-79cb-4036-8c21-9e6c7cbfed0b" name="変更" comment="07/02-kansei">
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/dda8d482-7918-4196-a8f2-9ec2d9924e6b.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/dda8d482-7918-4196-a8f2-9ec2d9924e6b.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/systemsekkei/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/systemsekkei/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/systemsekkei/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/systemsekkei/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/systemsekkei/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/systemsekkei/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/sekkei/home_doctor.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sekkei/home_doctor.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/sekkei/home_kanrisya.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sekkei/home_kanrisya.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/sekkei/home_uketuke.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sekkei/home_uketuke.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/sekkei/jugyoinjohohenkou.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sekkei/jugyoinjohohenkou.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/sekkei/jugyointouroku.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sekkei/jugyointouroku.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/sekkei/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sekkei/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/sekkei/recodetsuika.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sekkei/recodetsuika.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/sekkei/search_address.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sekkei/search_address.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -179,7 +176,8 @@
       <workItem from="1721094437743" duration="12180000" />
       <workItem from="1721108174401" duration="3407000" />
       <workItem from="1721187927189" duration="3270000" />
-      <workItem from="1721260621336" duration="6327000" />
+      <workItem from="1721260621336" duration="6688000" />
+      <workItem from="1721347066989" duration="5711000" />
     </task>
     <task id="LOCAL-00001" summary="07/02">
       <option name="closed" value="true" />
@@ -333,7 +331,15 @@
       <option name="project" value="LOCAL" />
       <updated>1721111506383</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="07/02-kansei">
+      <option name="closed" value="true" />
+      <created>1721273056043</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1721273056043</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

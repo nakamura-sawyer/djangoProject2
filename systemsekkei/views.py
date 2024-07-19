@@ -28,11 +28,13 @@ def login(request):
                 elif employee.emprole == 0:
                     return redirect('home_uketuke')
                 else:
-                    return HttpResponse('無効な役割です。')
+                    error_message = '無効な役割です。'
             else:
-                return HttpResponse('パスワードが間違っています。')
+                error_message = 'パスワードが間違っています。'
         except Employee.DoesNotExist:
-            return HttpResponse('従業員IDが存在しません。')
+            error_message = '従業員IDが存在しません。'
+
+        return render(request, 'sekkei/login.html', {'error_message': error_message})
     return render(request, 'sekkei/login.html')
 def logout(request):
     return render(request, 'sekkei/logout.html')
@@ -151,21 +153,23 @@ def update_password(request):
     if request.method == 'POST':
         user_id = request.POST.get('userId')
         new_password = request.POST.get('newPassword')
+        confirm_password = request.POST.get('confirmPassword')
 
-        if user_id and new_password:
-            try:
-                employee = Employee.objects.get(empid=user_id)
-                employee.emppasswd = new_password  # パスワードフィールドが `password` だと仮定します
-                employee.save()
-                return render(request, 'sekkei/update_password.html')
-            except Employee.DoesNotExist:
-                return render(request, 'sekkei/error2.html', {'message': 'ユーザーが見つかりません'})
-        else:
-            return render(request, 'sekkei/error2.html', {'message': 'ユーザーIDと新しいパスワードを入力してください'})
+        if not user_id or not new_password or not confirm_password:
+            return render(request, 'sekkei/error2.html', {'message': '全てのフィールドを入力してください'})
+
+        if new_password != confirm_password:
+            return render(request, 'sekkei/error2.html', {'message': 'パスワードが一致しません'})
+
+        try:
+            employee = Employee.objects.get(empid=user_id)
+            employee.emppasswd = new_password  # パスワードを更新
+            employee.save()
+            return render(request, 'sekkei/update_password.html', {'message': 'パスワードが正常に変更されました'})
+        except Employee.DoesNotExist:
+            return render(request, 'sekkei/error2.html', {'message': 'ユーザーが見つかりません'})
 
     return redirect('home_uketuke')
-
-
 def joho(request):
     return render(request, 'sekkei/jugyoinjohohenkou.html')
 

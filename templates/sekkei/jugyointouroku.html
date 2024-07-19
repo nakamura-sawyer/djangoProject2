@@ -8,7 +8,8 @@
             var empid = document.getElementById('empid').value;
             var empfname = document.getElementById('empfname').value;
             var emplname = document.getElementById('emplname').value;
-            var emppasswd = document.getElementById('emppasswd').value;
+            var emppasswd = document.getElementById('emppasswd').value
+            var confirmEmppasswd = document.getElementById('confirmEmppasswd').value;
             var errorMessage = "";
 
             if (empid === "") {
@@ -27,6 +28,13 @@
                 errorMessage += "パスワードを入力してください。\n";
             }
 
+            if (confirmEmppasswd === "") {
+                errorMessage += "パスワード確認を入力してください。\n";
+            }
+
+            if (emppasswd !== confirmEmppasswd) {
+                errorMessage += "パスワードが一致しません。\n";
+            }
             if (errorMessage !== "") {
                 alert(errorMessage);
                 return false;
@@ -38,7 +46,7 @@
 </head>
 <body>
 <h1>従業員登録</h1>
-<form action="{% url 'register_employee' %}" method="POST">
+<form action="{% url 'register_employee' %}" method="POST" onsubmit="return validateRegisterForm();">
     {% csrf_token %}
         <label for="empid">従業員ID:</label>
         <input type="text" id="empid" name="empid"><br>
@@ -52,6 +60,9 @@
         <label for="emppasswd">パスワード:</label>
         <input type="password" id="emppasswd" name="emppasswd"><br>
 
+        <label for="confirmEmppasswd">パスワード確認:</label>
+        <input type="password" id="confirmEmppasswd" name="confirmEmppasswd"><br>
+    
         <label for="emprole">役割:</label>
         <select id="emprole" name="emprole">
             <option value="0">受付</option>
