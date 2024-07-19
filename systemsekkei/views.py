@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, request
 from datetime import datetime, date
+from django.http import JsonResponse
 
 from systemsekkei.models import Employee
 from systemsekkei.models import Shiiregyosha
@@ -224,8 +225,18 @@ def update_hoken(request):
             return render(request, 'sekkei/error2.html', {'message': '有効な日付を入力してください'})
 
     return render(request, 'sekkei/update_hoken.html')
-
-
+def get_hoken_details(request):
+    patid = request.GET.get('patid')
+    try:
+        patient = Patient.objects.get(patid=patid)
+        data = {
+            'success': True,
+            'hokenmei': patient.hokenmei,
+            'hokenexp': patient.hokenexp
+        }
+    except Patient.DoesNotExist:
+        data = {'success': False}
+    return JsonResponse(data)
 def update_success(request):
     return render(request, 'sekkei/update_hoken.html')
 
@@ -293,7 +304,6 @@ def add(request):
 def shiji(request):
     medicines = Medicine.objects.all()
     return render(request, 'sekkei/kusurishiji.html', {'medicines': medicines})
-
 def kakutei(request):
     try:
         if request.method == 'POST':

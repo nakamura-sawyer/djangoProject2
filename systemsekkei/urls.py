@@ -25,6 +25,7 @@ urlpatterns = [
     path('touroku', views.touroku, name='touroku'),
     path('update_hoken/', views.update_hoken, name='update_hoken'),
     path('update_success/', views.update_success, name='update_success'),
+    path('get_hoken_details/', views.get_hoken_details, name='get_hoken_details'),
     path('kanri', views.kanri, name='kanri'),
     path('search_name/', views.search_name, name='search_name'),
     path('kensaku', views.kensaku, name='kensaku'),

@@ -3,6 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <title>患者管理</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#patid').on('change', function() {
+                var patid = $(this).val();
+                if (patid) {
+                    $.ajax({
+                        url: '{% url "get_hoken_details" %}',  // 保険証番号を取得するURL
+                        type: 'GET',
+                        data: {
+                            'patid': patid
+                        },
+                        success: function(data) {
+                            if (data.success) {
+                                $('#hokenmei').val(data.hokenmei);
+                                $('#hokenexp').val(data.hokenexp);
+                            } else {
+                                alert('患者IDが見つかりません');
+                            }
+                        }
+                    });
+                }
+            });
+        });
+    </script>
 </head>
 <body>
 <h1>患者管理</h1>
