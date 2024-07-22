@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>レコード追加</title>
+    <title>仕入先追加</title>
     <script>
         function validateShiireForm() {
             var shiireid = document.getElementById('shiireid').value;
@@ -47,7 +47,7 @@
     </script>
 </head>
 <body>
-<h1>レコード追加</h1>
+<h1>仕入先追加</h1>
      <form action="{% url 'register_vender' %}" method="POST">
          {% csrf_token %}
         <label for="shiireid">仕入先ID:</label>
