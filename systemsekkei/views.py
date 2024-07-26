@@ -277,8 +277,6 @@ def home_doctor(request):
 def kensaku2(request):
     patients = Patient.objects.all()
     return render(request, 'sekkei/kanjakensaku.html', {'patients': patients})
-
-
 def add(request):
     if request.method == "POST":
         patient_id = request.POST['patient_id']
@@ -322,7 +320,7 @@ def kakutei(request):
 
                     return redirect('confirm')
                 else:
-                    return render(request, 'sekkei/error3.html', {'message': '必要なデータが不足しています。'})
+                    return render(request, 'sekkei/error3.html', {'message': '処方情報がありません。'})
 
             elif action == 'delete':
                 if 'prescription_data' in request.session:
@@ -338,6 +336,7 @@ def kakutei(request):
         # 新たな例外が発生した場合にエラーメッセージをログに記録する
         print(f'エラーが発生しました: {str(e)}')
         return HttpResponse('エラーが発生しました。')
+
 def confirm(request):
     return render(request, 'sekkei/confirm.html')
 def delete(request):

@@ -14,16 +14,14 @@
             <th>薬剤名</th>
             <th>投与量</th>
         </tr>
-        
         <tr>
             <td>{{ patient }}</td>
             <td>{{ medicine }}</td>
             <td>{{ dosage }}</td>
             <td>
-              <button type="submit" name="action" value="delete">削除</button>  
+                
             </td>
         </tr>
-    
     </table>
     {% else %}
     <p>処方情報がありません。</p>
@@ -36,6 +34,7 @@
         <input type="hidden" name="dosage" value="{{ dosage }}">
         <input type="hidden" name="action" value="confirm">
         <button type="submit" name="action" value="confirm">処置確定</button>
+        <button type="submit" name="action" value="delete">削除</button> 
     </form>
 <a href="{% url 'home_doctor' %}">
     <p>戻る</p></a>
